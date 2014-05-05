@@ -31,11 +31,11 @@ class NesSprite(NesType):
         self.width = width
 
     def __len__(self):
-        print self.tile
-        print dir(self.tile)
-        print self.tile
-        print self.tile.__class__
-        print isinstance(self.tile, list)
+        print(self.tile)
+        print(dir(self.tile))
+        print(self.tile)
+        print(self.tile.__class__)
+        print(isinstance(self.tile, list))
         if isinstance(self.tile, List):
             return len(self.tile)
         return 1
