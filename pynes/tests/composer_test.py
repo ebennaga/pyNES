@@ -492,7 +492,7 @@ class ComposerTest(ComposerTestCase):
              '$1E,$1F')
          )
         self.assertEquals(1, len(self.game._vars))
-        self.assertEquals(range(32), self.game.get_var('palette'))
+        self.assertEquals(list(range(32)), self.game.get_var('palette'))
         # self.assertTrue('.bank 0' not in self.asm)
         self.assertTrue('.org $C000' not in self.asm)
 
