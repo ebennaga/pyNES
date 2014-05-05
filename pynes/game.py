@@ -337,7 +337,7 @@ class Game(object):
             obj = getattr(pynes.bitbag, bitpak_name, None)
             bp = obj(self)
             self.bitpaks[bitpak_name] = bp
-        print args
+        print(args)
         returnValue = self.bitpaks[bitpak_name](*args)
         self.add_asm_chunk(self.bitpaks[bitpak_name].asm())
         return returnValue
@@ -348,9 +348,9 @@ class Game(object):
                 self += bp.asm()
             except TypeError as ex:
                 msg = ex.message.replace('__call__', bitpak_name, 1)
-                raise(TypeError(msg))
+                raise TypeError(msg)
         else:
-            raise(NameError("name '%s' is not defined" % bitpak_name))
+            raise NameError(("name '%s' is not defined" % bitpak_name))
 
     def add_asm_chunk(self, asm_chunk):
         if asm_chunk and isinstance(asm_chunk, str):
