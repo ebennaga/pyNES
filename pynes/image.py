@@ -4,10 +4,10 @@ from PIL import Image, ImageDraw
 from collections import Counter, OrderedDict
 
 from pynes import write_bin_code
-import sprite
-import nametable
+from . import sprite
+from . import nametable
 
-from sprite import SpriteSet
+from .sprite import SpriteSet
 
 from pynes.tests import show_sprite
 
