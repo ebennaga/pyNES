@@ -12,6 +12,7 @@ from pynes.nes_types import NesType, NesInt, NesRs, NesArray, NesString, NesSpri
 from pynes.compiler import compile as nes_compile
 
 from _ast import *
+import collections
 
 
 class OperationStack:
@@ -247,8 +248,8 @@ class PyNesVisitor(ast.NodeVisitor):
                 self.stack.wipe()
             else:
                 args = []
-            print "call"
-            print args
+            print("call")
+            print(args)
 
             # check this condition, seens strange
             if node.func.id not in game.bitpaks:
@@ -273,7 +274,7 @@ class PyNesVisitor(ast.NodeVisitor):
             attrib = getattr(
                 self.stack.current()[0], self.stack.current()[1], None)
             self.stack.wipe()
-            if callable(attrib):
+            if isinstance(attrib, collections.Callable):
                 attrib()
 
     def visit_Add(self, node):
